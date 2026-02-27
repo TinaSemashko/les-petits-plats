@@ -3,15 +3,15 @@ import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-black flex flex-col">
-      <div className="relative w-full h-[400px]">
+    <div className="flex-1 flex flex-col bg-black">
+      <div className="relative w-full h-[93vh]">
         <Image
           src="/images/hero-img.png"
           alt="banner"
           fill
-          className="object-cover opacity-60"
+          className="object-cover brightness-50"
         />
-        <div className="absolute top-4 left-6 z-10">
+        <div className="absolute top-6 left-6 z-10">
           <Link href="/">
             <Image
               src="/images/logo.png"
@@ -22,14 +22,15 @@ export default function NotFound() {
           </Link>
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
-          <h1 className="text-[#FFD15B] text-5xl font-bold mb-4">404 :(</h1>
-          <p className="text-xl">La page que vous demandez est introuvable.</p>
+          <h1 className="text-[#FFD15B] text-5xl font-bold italic mb-4">
+            404 :(
+          </h1>
+          <p className="text-xl font-bold italic">
+            La page que vous demandez est introuvable.
+          </p>
         </div>
       </div>
-      <div className="flex-1 bg-black" />
-      <footer className="text-center text-gray-400 text-sm py-4 bg-black">
-        Copyright © 2025 - Les Petits Plats
-      </footer>
+      <div className="h-1 bg-green-600" />
     </div>
   );
 }

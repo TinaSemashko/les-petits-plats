@@ -17,7 +17,7 @@ export default async function RecipePage({ params }: Props) {
   }
 
   return (
-    <div className="min-h-screen bg-[#EDEDED]">
+    <div className="min-h-[94vh] bg-[#EDEDED]">
       <div className="w-full bg-black py-3 px-6">
         <Link href="/">
           <Image
@@ -29,13 +29,15 @@ export default async function RecipePage({ params }: Props) {
         </Link>
       </div>
       <div className="flex bg-white rounded-2xl overflow-hidden shadow-md max-w-5xl mx-auto mt-8">
-        <div className="relative w-1/2 min-h-[500px] shrink-0">
-          <Image
-            src={`/images/${recipe.image}`}
-            alt={recipe.name}
-            fill
-            className="object-cover"
-          />
+        <div className="w-1/2 p-8">
+          <div className="relative w-full h-[400px] rounded-2xl overflow-hidden ">
+            <Image
+              src={`/images/${recipe.image}`}
+              alt={recipe.name}
+              fill
+              className="object-contain"
+            />
+          </div>
         </div>
         <div className="w-1/2 py-8 px-8">
           <h1 className="text-2xl font-bold mb-4">{recipe.name}</h1>
