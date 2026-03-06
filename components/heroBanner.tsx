@@ -2,7 +2,11 @@ import Image from 'next/image';
 import SearchBar from './searchBar';
 import { anton } from '@/lib/fonts';
 
-export default function HeroBanner() {
+type Props = {
+  onSearch: (query: string) => void;
+};
+
+export default function HeroBanner({ onSearch }: Props) {
   return (
     <div className="relative w-full h-screen">
       <Image
@@ -25,7 +29,7 @@ export default function HeroBanner() {
         >
           DÉCOUVREZ NOS RECETTES DU QUOTIDIEN, SIMPLES ET DÉLICIEUSES
         </h1>
-        <SearchBar />
+        <SearchBar onSearch={onSearch} />
       </div>
     </div>
   );

@@ -43,7 +43,7 @@ export default function Home() {
 
   return (
     <div className="flex bg-[#EDEDED] min-h-screen items-center justify-center flex-col">
-      <HeroBanner />
+      <HeroBanner onSearch={setSearchQuery} />
       <TagFilter
         ingredients={availableIngredients}
         appareils={availableAppareils}

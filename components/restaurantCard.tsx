@@ -6,7 +6,7 @@ type Props = {
   recipe: Recipe;
 };
 
-export default function RecipeCard({ recipe }: Props) {
+export default function RestaurantCard({ recipe }: Props) {
   return (
     <Link href={`/recette/${recipe.slug}`} className="block h-full">
       <div className="bg-white rounded-2xl overflow-hidden shadow-md h-full">
