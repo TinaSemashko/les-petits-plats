@@ -25,7 +25,10 @@ export default function SearchBar({ onSearch }: Props) {
         placeholder="Rechercher une recette, un ingrédient..."
         className="w-full py-4 px-6 pr-14 rounded-xl text-black bg-white"
       />
-      <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-black rounded-lg p-3">
+      <button
+        onClick={() => onSearch(value)}
+        className="absolute right-2 top-1/2 -translate-y-1/2 bg-black rounded-lg p-3 cursor-pointer"
+      >
         <Image
           src="/images/search-icon.png"
           alt="search"
