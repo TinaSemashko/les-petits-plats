@@ -20,6 +20,7 @@ export default function Home() {
         .normalize('NFD')
         .replace(/[\u0300-\u036f]/g, '');
     const query = normalize(searchQuery.trim());
+
     const matchSearch =
       query.length < 3 ||
       normalize(r.name).includes(query) ||
