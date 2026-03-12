@@ -14,12 +14,18 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState('');
 
   const filtered = (recipes as Recipe[]).filter((r) => {
-    const query = searchQuery.toLowerCase().trim();
+    const normalize = (str: string) =>
+      str
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+    const query = normalize(searchQuery.trim());
     const matchSearch =
       query.length < 3 ||
-      r.name.toLowerCase().includes(query) ||
-      r.description.toLowerCase().includes(query) ||
-      r.ingredients.some((i) => i.ingredient.toLowerCase().includes(query));
+      normalize(r.name).includes(query) ||
+      normalize(r.description).includes(query) ||
+      r.ingredients.some((i) => normalize(i.ingredient).includes(query));
+
     const matchIng = selectedIngredients.every((s) =>
       r.ingredients.some((i) => i.ingredient === s),
     );
